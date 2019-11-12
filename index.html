@@ -17,14 +17,12 @@
       <span v-else>🤞</span>
     </h1>
 
-    <ul>
-      <li v-for="(p, i) in prices" v-bind:key="p">
-        {{ i }} - {{ p }}
-      </li>
-    </ul>
+    <span v-on:click="toggleShowPrices">
+      {{ showPrices ? '🙈' : '🐵' }}
+    </span>
 
-    <ul>
-      <li v-for="(p, i) in pricesWithDays" v-bind:key="p">
+    <ul v-show="showPrices">
+      <li v-for="(p, i) in pricesWithDays" v-bind:key="p.day">
         {{ i }} - {{ p.day }} - {{ p.value }}
       </li>
     </ul>
