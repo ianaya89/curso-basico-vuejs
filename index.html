@@ -24,7 +24,7 @@
     </ul>
 
     <ul>
-      <li v-for="(p, i) in pricesWithDays" v-bind:key="p">
+      <li v-for="(p, i) in pricesWithDays" v-bind:key="p.day">
         {{ i }} - {{ p.day }} - {{ p.value }}
       </li>
     </ul>
