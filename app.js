@@ -52,15 +52,18 @@ Vue.component('CoinDetail', {
       <input type="number" v-model="value">
       <span>{{ convertedValue }}</span>
 
+      <slot name="text"></slot>
+      <slot name="link"></slot>
+
       <ul v-show="showPrices">
-      <li
-        class="uppercase"
-        v-bind:class="{ orange: p.value === coin.price, red: p.value < coin.price, green: p.value > coin.price }"
-        v-for="(p, i) in coin.pricesWithDays"
-        v-bind:key="p.day">
-        {{ i }} - {{ p.day }} - {{ p.value }}
-      </li>
-    </ul>
+        <li
+          class="uppercase"
+          v-bind:class="{ orange: p.value === coin.price, red: p.value < coin.price, green: p.value > coin.price }"
+          v-for="(p, i) in coin.pricesWithDays"
+          v-bind:key="p.day">
+          {{ i }} - {{ p.day }} - {{ p.value }}
+        </li>
+      </ul>
     </div>
   `
 })
