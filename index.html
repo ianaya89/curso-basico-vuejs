@@ -15,11 +15,11 @@
       <span v-if="changePercent > 0">👍</span>
       <span v-else-if="changePercent < 0">👎</span>
       <span v-else>🤞</span>
-    </h1>
 
-    <span v-on:click="toggleShowPrices">
-      {{ showPrices ? '🙈' : '🐵' }}
-    </span>
+      <span v-on:click="toggleShowPrices">
+        {{ showPrices ? '🙈' : '🐵' }}
+      </span>
+    </h1>
 
     <ul v-show="showPrices">
       <li v-for="(p, i) in pricesWithDays" v-bind:key="p.day">
