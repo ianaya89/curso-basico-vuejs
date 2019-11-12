@@ -9,7 +9,16 @@
 </head>
 <body>
   <div id="app">
-    <h1>{{ name }}</h1>
+    <h1>
+      {{ name }}
+      <span v-if="changePercent > 0">👍</span>
+      <span v-else-if="changePercent < 0">👎</span>
+      <span v-else>🤞</span>
+
+      <span v-show="changePercent > 0">👍</span>
+      <span v-show="changePercent < 0">👎</span>
+      <span v-show="changePercent === 0">🤞</span>
+    </h1>
     <img v-bind:src="img" v-bind:alt="name">
   </div>
 
