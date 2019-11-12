@@ -10,7 +10,7 @@
 <body>
   <div id="app">
     <img v-bind:src="img" v-bind:alt="name">
-    <h1>
+    <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
       {{ name }}
       <span v-if="changePercent > 0">👍</span>
       <span v-else-if="changePercent < 0">👎</span>
@@ -22,7 +22,11 @@
     </h1>
 
     <ul v-show="showPrices">
-      <li v-for="(p, i) in pricesWithDays" v-bind:key="p.day">
+      <li
+        class="uppercase"
+        v-bind:class="{ orange: p.value === price, red: p.value < price, green: p.value > price }"
+        v-for="(p, i) in pricesWithDays"
+        v-bind:key="p.day">
         {{ i }} - {{ p.day }} - {{ p.value }}
       </li>
     </ul>
