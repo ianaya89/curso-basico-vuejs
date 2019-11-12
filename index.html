@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div id="app">
+  <div id="app" v-bind:style="{ background: '#' + color }">
     <img v-bind:src="img" v-bind:alt="name">
     <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
       {{ name }}
