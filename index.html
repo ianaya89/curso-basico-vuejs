@@ -9,7 +9,12 @@
 </head>
 <body>
   <div id="app">
-    <img v-bind:src="img" v-bind:alt="name">
+    <img
+      v-on:mouseover="toggleShowPrices"
+      v-on:mouseout="toggleShowPrices"
+      v-bind:src="img"
+      v-bind:alt="name">
+
     <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
       {{ name }}
       <span v-if="changePercent > 0">👍</span>
