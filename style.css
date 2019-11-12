@@ -1,0 +1,54 @@
+#app {
+  font-family: sans-serif;
+  flex-direction: column;
+  padding: 20px;
+  min-height: 800px;
+}
+
+.green {
+  color: seagreen;
+}
+
+.red {
+  color: tomato;
+}
+
+.orange {
+  color: orange;
+}
+
+.uppercase {
+  text-transform: uppercase
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  height: 64px;
+  width: 64px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul li {
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px;
+}
+
+.row {
+  justify-content: space-around;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+span {
+  cursor: pointer;
+}
